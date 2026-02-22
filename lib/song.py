@@ -10,17 +10,17 @@ class Song:
         self.artist = artist
         self.genre = genre
 
-        Song.add_songs_to_count()
+        Song.add_song_to_count()
         Song.add_to_genres(genre)
         Song.add_to_artists(artist)
         Song.add_to_genre_count(genre)
-        Song.add_to_artist_count(artist)
+        Song.add_to_artists_count(artist)
 
     def get_details(self):
         return f'Name : {self.name} , Artist : {self.artist}, Genre : {self.genre}'
     
     @classmethod
-    def add_songs_to_count(cls):
+    def add_song_to_count(cls):
         cls.song_count +=1
     
     @classmethod
@@ -40,7 +40,7 @@ class Song:
         else:
             cls.genre_count[genre] =1 
     @classmethod
-    def add_to_artist_count(cls,artist):
+    def add_to_artists_count(cls,artist):
         if artist in cls.artist_count:
             cls.artist_count[artist] +=1
         else:
